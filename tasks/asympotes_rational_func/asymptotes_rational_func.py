@@ -16,9 +16,9 @@ for i in denom_zeros:
     if n_p_inf(sp.limit(f, x, i, '-')) or n_p_inf(sp.limit(f, x, i, '-')):
         vertical_asymptotes.append(i)
 k = sp.limit(f / x, x, sp.oo)
-b = sp.limit(f - k * x, x, sp.oo)
-print('Вертикальные ассимптоты', end=": ")
 
+b = sp.limit(f - k * x, x, sp.oo)
+horizontal_asymptote = f'y = {k * x + b} ' if not (n_p_inf(k) or n_p_inf(b)) else '-'
 ans = [f'x = {i}' for i in sorted(vertical_asymptotes)]
-print(', '.join(ans) if ans else 'отсуствуют')
-print('Горизонтальная ассимптота:', f'y = {k * x + b}')
+print(', '.join(ans) if ans else '-')
+print(horizontal_asymptote)
