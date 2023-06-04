@@ -3,7 +3,8 @@ import sympy as sp
 
 def n_p_inf(q):  # +- бесконечность
     return q == sp.oo or q == -sp.oo
-
+def infinite(q):
+    return q == sp.oo or q == -sp.oo or q == sp.zoo or q == sp.nan
 
 x = sp.Symbol('x')
 
@@ -18,7 +19,7 @@ for i in denom_zeros:
 k = sp.limit(f / x, x, sp.oo)
 
 b = sp.limit(f - k * x, x, sp.oo)
-horizontal_asymptote = f'y = {k * x + b} ' if not (n_p_inf(k) or n_p_inf(b)) else '-'
+horizontal_asymptote = f'y = {k * x + b} ' if not (infinite(k) or infinite(b)) else '-' 
 ans = [f'x = {i}' for i in sorted(vertical_asymptotes)]
 print(', '.join(ans) if ans else '-')
 print(horizontal_asymptote)
