@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATS version="1.11">
+        <Problem title="Лёша и Антоша" lang="ru" tlimit="2" mlimit="64" author="Ю.Сидоренко, Н.Добрынский" inputFile="*STDIN" outputFile="*STDOUT">
+                <ProblemStatement>
+                        <p>Лёша учится в университете, а его младший брат Антоша только закончил первый класс.
+                          Антоша очень любит записывать последовательность чисел в строчку. Лёша любит
+                          интегрировать многочлены, он решил, что из строчки, записанной Антошей, можно
+                          составлять такие выражения. После того, как Лёша составляет многочлен, он
+                          просит Антошу назвать еще два числа. После этого Лёша интегрирует этот многочлен
+                          на отрезке, названным Антошей.</p>
+                </ProblemStatement>
+                <InputFormat>
+                        <p>В первой строке через пробел целочисленные коэффиценты $Ci$,
+                                                  из которых составляется многочлен (например для коэффицентов $3$ $2$ $1$ 
+                                                  будет составлен многочлен вида : $3x^2$ + $2x$ + $1$)
+                                                Во второй строке через пробел два целых числа $A$ и $B$ - отрезок интегрирования</p>
+                </InputFormat>
+                <OutputFormat>
+                        <p>Значение определенного интеграла на отрезке $[A,B]$, округленное до целого.</p>
+                </OutputFormat>
+                <ProblemConstraints>
+                        <p>$0 \le N \le 9$<br />
+$-10^{4} \le Ci \le 10^{4}$<br/>
+$-10^{5} \le A,B \le 10^{5}$</p>
+                </ProblemConstraints>
+                <Sample rank="1">
+                        <SampleIn>3 2 1
+1 5
+                                                </SampleIn>
+                        <SampleOut>152</SampleOut>
+                </Sample>
+                <Import type="checker" guid="std.nums"/>
+        <Solution src="sol.py" name="sol"/>
+        <Generator src="gen.py" name="gen" outputFile="%0n.in" timeLimit="10"/>
+                <Test rank="1-18">
+                        <In use="gen" genAll="1"/>
+                        <Out use="sol"/>
+                </Test>
+                <Test rank="19">
+                        <In src="%0n.in"/>
+                        <Out use="sol"/>
+                </Test>
+        </Problem>
+</CATS>
+                        
+                        
+                
+
+                        
+        
