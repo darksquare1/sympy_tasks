@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATS version="1.11">
+        <Problem title="Собственные значения" lang="ru" tlimit="1" mlimit="64" author="Н.Добрынский, Ю.Сидоренко" inputFile="*STDIN" outputFile="*STDOUT">
+                <ProblemStatement>
+                        <p>Дана квадратная матрица $A$ размерности $N$. Требуется вычислить ее собственные значения.</p>
+                                                
+                </ProblemStatement>
+                <InputFormat>
+                        <p>В первой строке подается целое число $N$.
+                                                  В следующих $N$ строках содержится матрица $А$ состоящая из целых чисел.</p>
+
+                </InputFormat>
+                <OutputFormat>
+                        <p>Вывод собственных значений по возрастанию в первой строчке.</p>
+                </OutputFormat>
+                <ProblemConstraints>
+                        <p>$2 \le n \le 6$ <br />
+$-100 \le ai \le 100$ 
+                                                </p>
+                </ProblemConstraints>
+                <Sample rank="1">
+                        <SampleIn>4
+1 1 1 1
+1 1 1 1
+1 1 1 1
+1 1 1 1                                            
+                                                </SampleIn>
+                        <SampleOut>0 4</SampleOut>
+                </Sample>
+                <Import type="checker" guid="std.nums"/>
+                <Solution src="sol.py" name="sol"/>        
+                <Test rank="1-7">
+                    <In src="%0n.in"/>
+                    <Out use="sol"/>
+                </Test>
+        </Problem>
+</CATS>
+             
