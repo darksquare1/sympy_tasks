@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATS version="1.11">
+        <Problem title="Длина дуги" lang="ru" tlimit="5" mlimit="64" author="Н.Добрынский, Ю.Сидоренко" inputFile="*STDIN" outputFile="*STDOUT">
+                <ProblemStatement>
+                        <p>Задана функция $f(x)$ и отрезок $[a, b]$, которому принадлежит $x$.
+                                                  Найти длину дуги кривой функции $f(x)$</p>
+                </ProblemStatement>
+                <InputFormat>
+                        <p>В первой строке многочлен степени $n$. Во второй строке целые числа $a$ и $b$ через пробел. </p>
+                </InputFormat>
+                <OutputFormat>
+                        <p>Вывести длину дуги с точностью до трех знаков после запятой</p>
+                </OutputFormat>
+                <ProblemConstraints>
+                        <p>$0 \le n \le 10$ <br />
+$-1000 \le a,b \le 1000$
+                        </p>
+                </ProblemConstraints>
+                <Sample rank="1">
+                <SampleIn>x**2
+1 5
+                </SampleIn>
+                <SampleOut>24.395</SampleOut>
+                </Sample>
+                <Import type="checker" guid="std.nums"/>
+                <Solution src="sol.py" name="sol"/>
+                <Generator src="gen.py" name="gen" outputFile="%0n.in" timeLimit="10"/>
+                 <Test rank="1-17">
+                    <In genAll="1" use="gen"/>
+                    <Out use="sol"/>
+                </Test>
+                <Test rank="18-19">
+					<In src="%0n.in"/>
+					<Out use="sol"/>
+				</Test>
+        </Problem>
+</CATS>
