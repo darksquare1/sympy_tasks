@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATS version="1.11">
+        <Problem title="Асимптоты" lang="ru" tlimit="3" mlimit="64" author="Ю.Сидоренко, Н.Добрынский" inputFile="*STDIN" outputFile="*STDOUT">
+                <ProblemStatement>
+                        <p> Задана рациональная функция $\frac{Pn(x)}{Qn(x)}$, где $Pn(x)$ и $Qn(x)$ многочлены степени $N$. У этой 
+                        функции не больше двух вертикальных и одна наклонная асимптоты. Вывести уравнения 
+                        этих асимптот.</p>
+                </ProblemStatement>
+                <InputFormat>
+                        <p>Входные данные содержат рациональную функцию вида $\frac{Pn(x)}{Qn(x)}$ , где $Pn(x)$ и $Qn(x)$
+                        многочлены степени степени $N$, $N$ - целое число. Например, функция $\frac{3-x^{2}}{x+2}$ подается
+                        как $(3-x**2)/(x+2)$</p>
+                </InputFormat>
+                <OutputFormat>
+                        <p>Выходные данные содержат две строки. В первой нужно вывести уравнения вертикальных асимптот  
+                        в порядке возрастания, а во второй строке уравнение наклонной асимптоты, если асимптот нет, то нужно напечатать '-'</p>
+                </OutputFormat>
+                <ProblemConstraints>
+                        <p>$0 \le N \le 2$</p>
+                </ProblemConstraints>
+                <Sample rank="1">
+                        <SampleIn>(3-x**2)/(x+2)</SampleIn>
+                        <SampleOut>x=-2 
+y=2-x
+                        </SampleOut>
+                </Sample>
+                <Import type="checker" guid="std.strs"/>
+        <Solution src="sol.py" name="sol"/>
+        <Generator src="gen.py" name="gen" outputFile="%0n.in" timeLimit="10"/>
+                <Test rank="1-16">
+                        <In use="gen" genAll="1"/>
+                        <Out use="sol"/>
+                </Test>
+                <Test rank="17-19">
+                        <In src="%0n.in"/>
+                        <Out use="sol"/>
+                </Test>
+        </Problem>
+</CATS>
+                        
+                        
+                
+
+                        
+        
