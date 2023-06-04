@@ -1,21 +1,6 @@
-
 import sympy as sp
-# Определяем переменную x
-x = sp.Symbol('x')
-# Определяем функцию f(x)
-f = sp.simplify(input())
-# Находим производную функции
-df = sp.diff(f, x)
-# Находим корни производной
-roots = sp.solve(df, x)
-# Определяем тип экстремумов
-if len(roots) == 0:
-    print("Функция не имеет экстремумов")
-else:
-    for root in roots:
-        if sp.diff(df, x).subs(x, root) > 0:
-            print(f"Точка ({root}, {f.subs(x, root)}) - локальный минимум")
-        elif sp.diff(df, x).subs(x, root) < 0:
-            print(f"Точка ({root}, {f.subs(x, root)}) - локальный максимум")
-        else:
-            print(f"Точка ({root}, {f.subs(x, root)}) - не является экстремумом")
+
+n = int(input())
+a = sp.Matrix([[int(i) for i in input().split()] for i in range(n)])
+eigenvalues = a.eigenvals()  # находим собственные значения
+print(*sorted(eigenvalues))  # выводим в порядке возрастания
