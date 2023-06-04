@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATS version="1.11">
+        <Problem title="Обратная функция" lang="ru" tlimit="2" mlimit="64" author="Н.Добрынский, Ю.Сидоренко" inputFile="*STDIN" outputFile="*STDOUT">
+                <ProblemStatement>
+                        <p>Требуется найти обратную функцию данной и начертить график, используя библиотеку matplotlib.</p>
+                </ProblemStatement>
+                <InputFormat>
+                        <p>На вход подается функция вида $y = f(x)$.</p>
+                </InputFormat>
+                <OutputFormat>
+                        <p>Вывод обратной функции и изображение её графика в отдельном окне.</p>
+                </OutputFormat>
+                <Sample rank="1">
+                <SampleIn>ln(x)</SampleIn>
+                <SampleOut>exp(x)</SampleOut>
+                </Sample>
+                                <Sample rank="2">
+                <SampleIn>x**2</SampleIn>
+                <SampleOut>-sqrt(x) sqrt(x)</SampleOut>
+                </Sample>
+                <Import type="checker" guid="std.strs"/>
+                <Solution src="sol.py" name="sol"/>
+                <Test rank="1-6">
+                                        <In src="%0n.in"/>
+                    <Out use="sol"/>
+                </Test>
+        </Problem>
+</CATS>
