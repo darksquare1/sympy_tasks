@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATS version="1.11">
+        <Problem title="Помогите Матвею!" lang="ru" tlimit="2" mlimit="64" author="Ю.Сидоренко, Н.Добрынский" inputFile="*STDIN" outputFile="*STDOUT">
+                <ProblemStatement>
+                        <p> Матвей Кислюк решил списать контрольную работу по линейной алгебре. Ему 
+                                                  попалось задание, в котором нужно преобразовать алгебраический вид записи 
+                                                  комплексного числа в тригонометрическую. Но он не смог вовремя найти нужный ему 
+                                                  калькулятор. Поэтому, он просит вас написать программу, которая поможет ему 
+                                                  переписать эту же контрольную в следующий раз.</p>                                          
+                </ProblemStatement>
+                <InputFormat>
+                        <p>На вход подается алгебраическая форма записи комплексного числа вида $a + b*I$, где $a$ и 
+                                                  $b$ – действительные числа, $I$ – мнимая единица.</p>
+                </InputFormat>
+                <OutputFormat>
+                        <p>Вывести данное комплексное число в тригонометрическом виде.</p>
+                </OutputFormat>
+                <ProblemConstraints>
+                        <p>$-10^{6} \le a,b \le 10^{6}$</p>
+                </ProblemConstraints>
+                <Sample rank="1">
+                        <SampleIn>151 + 17*I                                          
+                        </SampleIn>
+                        <SampleOut>sqrt(23090)(cos(atan(17/151)) + i sin(atan(17/151)))</SampleOut>
+                                </Sample>
+                                <Sample rank="2">
+                        <SampleIn>0 + 1*I                                         
+                        </SampleIn>
+                        <SampleOut>1(cos(pi/2) + i sin(pi/2))</SampleOut>
+                </Sample>
+                <Import type="checker" guid="std.strs"/>
+                <Solution src="sol.py" name="sol"/>
+                <Generator src="gen.py" name="gen" outputFile="%0n.in" timeLimit="10"/>
+                <Test rank="1-18">
+                        <In use="gen" genAll="1"/>
+                        <Out use="sol"/>
+                </Test>
+                <Test rank="19-20">
+                    <In src="%0n.in"/>
+                    <Out use="sol"/>
+                </Test>
+        </Problem>
+</CATS>
+                        
+                        
+                
+
+                        
+        
