@@ -4,6 +4,6 @@ from scipy.linalg import inv
 n = int(input())
 A = [[float(i) for i in input().split()] for j in range(n)]
 A = inv(A)
-b = [input(float(i)) for i in range(n)]
+b = [float(input()) for i in range(n)]
 x = solve(A, b)
-print(*map(lambda i: round(i),x),sep=', ')
+print(*map(lambda i: round(i), x[:]), sep=', ')
