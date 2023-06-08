@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATS version="1.11">
+        <Problem title="Приближённое значение" lang="ru" tlimit="2" mlimit="64" author="Ю.Сидоренко, Н.Добрынский" inputFile="*STDIN" outputFile="*STDOUT">
+                <ProblemStatement>
+                        <p>Студент Василий пытается найти приближённое значение функции $f(x)$, при $x = a$, но 
+                          все его попытки оказались неудачными. Он решил рассказать проблему своему 
+                          преподавателю Павлу Владимировичу, который поделился с Васей решением. Оказывается, нужно разложить функцию в Ряд Тейлора до n-ного члена,
+                          а затем вычислить.</p>
+                        <p>Теперь вы — на месте Васи. Вам требуется написать программу приближенного 
+                          значения с помощью Ряда Тейлора.</p>
+                </ProblemStatement>
+                <InputFormat>
+                        <p>На вход подается функция вида $f(x)$, целые числа $n$ и $a$.</p>
+                </InputFormat>
+                <OutputFormat>
+                        <p>В первой строке вывести разложение в ряд Тейлора
+                           Во второй строке вывести значение, округленное до тысячных.</p>
+                </OutputFormat>
+                <ProblemConstraints>
+                        <p>$2 \le n \le 10$<br />
+$-1000 \le a \le 1000$<br/></p>
+                </ProblemConstraints>
+                <Sample rank="1">
+                        <SampleIn>sin(x)
+10
+1
+                        </SampleIn>
+                        <SampleOut>x**9/362880 - x**7/5040 + x**5/120 - x**3/6 + x
+0.841
+</SampleOut>
+                </Sample>
+                <Import type="checker" guid="std.strs"/>
+        <Solution src="sol.py" name="sol"/>
+        <Generator src="gen.py" name="gen" outputFile="%0n.in" timeLimit="10"/>
+                <Test rank="1-7">
+                        <In use="gen" genAll="1"/>
+                        <Out use="sol"/>
+                </Test>
+                <Test rank="8-10">
+                        <In src="%0n.in"/>
+                        <Out use="sol"/>
+                </Test>
+        </Problem>
+</CATS>
+                        
