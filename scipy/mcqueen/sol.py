@@ -6,4 +6,4 @@ for i in range(m):
     xi = [float(i) for i in input().split()] # считываем значение точки
     b = minimize(rosen, xi, method='Nelder-Mead') # находим ближайшую точку минимума
     s += b.fun # суммируем значения в этих точках
-print(s.round())
+print(round(s))
