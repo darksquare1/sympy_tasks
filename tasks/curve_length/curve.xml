@@ -22,7 +22,7 @@ $-1000 \le a,b \le 1000$
                 </SampleIn>
                 <SampleOut>24.395</SampleOut>
                 </Sample>
-                <Import type="checker" guid="std.nums"/>
+                <Import type="checker" guid="std.floats3"/>
                 <Solution src="sol.py" name="sol"/>
                 <Generator src="gen.py" name="gen" outputFile="%0n.in" timeLimit="10"/>
                  <Test rank="1-17">
