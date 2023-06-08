@@ -29,7 +29,7 @@
                 </SampleIn>
                 <SampleOut>24500.0000000000</SampleOut>
                 </Sample>
-                <Import type="checker" guid="std.nums"/>
+                <Import type="checker" guid="std.floats2"/>
                 <Solution src="sol.py" name="sol"/>
                 <Generator src="gen.py" name="gen" outputFile="%0n.in" timeLimit="10"/>
                 <Test rank="1-18">
