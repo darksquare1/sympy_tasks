@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATS version="1.11">
+        <Problem title="Система уравнений" lang="ru" tlimit="4" mlimit="64" author="Н.Добрынский, Ю.Сидоренко" inputFile="*STDIN" outputFile="*STDOUT">
+                <ProblemStatement>
+                        <p>Вам на вход подается система из $n$ уравнений с $m$ неизвестными вида:
+                                                        $\begin{equation*}
+                                                        \begin{cases}
+                                                        a_{11}x_{0} + a_{12} x_{1} +...+a_{1m} x_{m-1} = b_{1}
+                                                        \\
+                                                        a_{21}x_{0} + a_{22} x_{1} +...+a_{2m} x_{m-1} = b_{2}
+                                                        \\
+                                                        ...
+                                                        \\
+                                                        a_{n1}x_{0} + a_{n2} x_{1} +...+a_{nm} x_{m-1} = b_{n}
+                                                        \end{cases}
+                                                        \end{equation*}$<br />
+                            Найдите решение этой системы если оно существует, иначе вывести сообщение о том, что решения нет.
+                                        </p>                                          
+                </ProblemStatement>
+                <InputFormat>
+                        <p>В первой строке через проблем числа $n$ и $m$
+                                                  В следующих $n$ строках содержится система уравнений с $m$ неизвестными
+                                                </p>
+                </InputFormat>
+                <OutputFormat>
+                        <p>Вывести решение данной системы или сообщение о его отсутствии</p>
+                </OutputFormat>
+                <ProblemConstraints>
+                        <p>$1 \le n,m \le 10$<br />
+$1 \le a_{ij} \le 100$</p>
+                </ProblemConstraints>
+                <Sample rank="1">
+                        <SampleIn>1 7
+27*x0 + 3*x1 + 70*x2 + 3*x3 + 99*x4 + 38*x5 + 39*x6 = 39                                          
+                        </SampleIn>
+                        <SampleOut>system solution: {x0: -x1/9 - 70*x2/27 - x3/9 - 11*x4/3 - 38*x5/27 - 13*x6/9 + 13/9}</SampleOut>
+                </Sample>                                
+                                <Sample rank="2">
+                        <SampleIn>2 2
+x0 + x1 = 2
+x0 + x1 = -2                                          
+                                                </SampleIn>
+                        <SampleOut>system solution: No solution</SampleOut>
+                                </Sample>
+                <Sample rank="3">
+                        <SampleIn>3 3
+3*x0+2*x1-5*x2=-1
+2*x0 - x1 +3*x2=13
+x0 + 2*x1 - x2=9                                         
+                        </SampleIn>
+                        <SampleOut>system solution: {x0: 3, x1: 5, x2: 4}</SampleOut>
+                </Sample>
+                <Import type="checker" guid="std.strs"/>
+                <Solution src="sol.py" name="sol"/>
+                <Generator src="gen.py" name="gen" outputFile="%0n.in" timeLimit="10"/>
+                <Test rank="1-10">
+                        <In use="gen" genAll="1"/>
+                        <Out use="sol"/>
+                </Test>
+                <Test rank="11-13">
+                    <In src="%0n.in"/>
+                    <Out use="sol"/>
+                </Test>
+        </Problem>
+</CATS>
+                        
+                        
+                
+
+                        
+        
