@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CATS version="1.11">
-        <Problem title="Обратная функция" lang="ru" tlimit="2" mlimit="64" author="Н.Добрынский, Ю.Сидоренко" inputFile="*STDIN" outputFile="*STDOUT">
+        <Problem title="Обратная функция" lang="ru" tlimit="2" mlimit="512M" author="Н.Добрынский, Ю.Сидоренко" inputFile="*STDIN" outputFile="output.png">
+                <Picture name="example" src="example.png"/>
                 <ProblemStatement>
-                        <p>Требуется найти обратную функцию данной и начертить график, используя библиотеку matplotlib.</p>
+                        <p>Требуется найти обратную функцию данной и начертить график, используя библиотеку matplotlib.
+                          График должен быть нарисован зелёным цветом <code>'green'</code> и содержать координатную сетку.
+                          Интервал для отрисовки состоит из 10000 равномерно распределенных значений в диапазоне от -10 до 10 включительно.
+                          </p>
+                          <img picture="example"/>
                 </ProblemStatement>
                 <InputFormat>
                         <p>На вход подается функция вида $y = f(x)$.</p>
                 </InputFormat>
                 <OutputFormat>
-                        <p>Вывод обратной функции и изображение её графика в отдельном окне.</p>
+                        <p>Построить и записать график обратной функции в файл "output.png".</p>
                 </OutputFormat>
-                <Sample rank="1">
-                <SampleIn>ln(x)</SampleIn>
-                <SampleOut>exp(x)</SampleOut>
-                </Sample>
-                                <Sample rank="2">
-                <SampleIn>x**2</SampleIn>
-                <SampleOut>-sqrt(x) sqrt(x)</SampleOut>
-                </Sample>
-                <Import type="checker" guid="std.strs"/>
+                <Checker style="testlib" src="checker.py"/>
                 <Solution src="sol.py" name="sol"/>
                 <Test rank="1-6">
-                                        <In src="%0n.in"/>
-                    <Out use="sol"/>
+                    <In src="%0n.in"/>
+                <Out use="sol"/>
                 </Test>
         </Problem>
 </CATS>
