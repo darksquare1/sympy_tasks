@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATS version="1.11">
+        <Problem title="Экстремумы" lang="ru" tlimit="2" mlimit="128" author="Ю.Сидоренко, Н.Добрынский" inputFile="*STDIN" outputFile="*STDOUT">
+                <ProblemStatement>
+                        <p>Задана функция $f(x)$, вам необходимо найти  точки максимума и минимума этой функции, если же
+                          таких точек не оказалось, то нужно вывести на печать "No extremums".</p>
+                </ProblemStatement>
+                <InputFormat>
+                        <p>Функция $f(x)$.</p>
+                </InputFormat>
+                <OutputFormat>
+                        <p>Вывести координаты точки максимума, минимума или сообщение об их отсутствии.
+                          Если функция содержит и максимум и минимум, то в первой строке вывести координаты точки максимума, а во второй минимума.</p>
+                </OutputFormat>
+                <Sample rank="1">
+                        <SampleIn>(x**2)/2</SampleIn>
+                        <SampleOut>(0, 0) - min</SampleOut>
+                </Sample>
+                <Sample rank="2">
+                        <SampleIn>(x**2)/(x+3)</SampleIn>
+                        <SampleOut>(-6, -12) - max
+(0, 0) - min</SampleOut>
+                </Sample>
+                <Sample rank="3">
+                        <SampleIn>ln(x)</SampleIn>
+                        <SampleOut>No extremums</SampleOut>
+                </Sample>
+                <Import type="checker" guid="std.strs"/>
+                <Solution src="sol.py" name="sol"/>               
+                <Test rank="1-5">
+                        <In src="%0n.in"/>
+                        <Out use="sol"/>
+                </Test>
+        </Problem>
+</CATS>
+                        
+                        
+                
+
+                        
+        
