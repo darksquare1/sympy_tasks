@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATS version="1.11">
+        <Problem title="Фурье" lang="ru" tlimit="4" mlimit="64" author="Н.Добрынский, Ю.Сидоренко" inputFile="*STDIN" outputFile="*STDOUT">
+                <ProblemStatement>
+                        <p>Требуется найти дискретную трансформацию Фурье и её обратное значение в 
+                                                  интервале $(a, b)$, на котором $n$ точек равноудалены друг от друга.</p>                                          
+                </ProblemStatement>
+                <InputFormat>
+                        <p>На вход в первой строке подается функция f(x).
+                                              Во второй – через пробел целые числа : $a$, $b$, $n$.</p>
+                </InputFormat>
+                <OutputFormat>
+                        <p>В первой строке вывести дискретную трансформацию Фурье.
+                                                  Во второй её обратное значение.</p>
+                </OutputFormat>
+                                <ProblemConstraints>
+                        <p>$1 \le n \le 10^{5}$ <br />
+$-1000 \le a,b \le 1000$
+                        </p>
+                                </ProblemConstraints>
+                <Sample rank="1">
+                        <SampleIn>x**2 + 5*x
+-1 1 2                    
+                        </SampleIn>
+                        <SampleOut>(2-0j) (-10-0j)
+(1-0j) (-5-0j)</SampleOut>
+                </Sample>                                
+                                <Sample rank="2">
+                        <SampleIn>sin(x)
+-5 5 3                                          
+                                                </SampleIn>
+                        <SampleOut>-0j (1.4383864119947076-0.8304527821638443j) (1.4383864119947076+0.8304527821638443j)
+-0j (0.47946213733156917+0.27681759405461476j) (0.47946213733156917-0.27681759405461476j)</SampleOut>
+                                </Sample>
+                <Sample rank="3">
+                        <SampleIn>sqrt(x)
+1 5 2                                         
+                        </SampleIn>
+                        <SampleOut>(3.23606797749979-0j) (-1.2360679774997898-0j)
+(1.618033988749895-0j) (-0.6180339887498949-0j)</SampleOut>
+                </Sample>       
+                <Import type="checker" guid="std.strs"/>
+                <Solution src="sol.py" name="sol"/>
+                                <Generator src="gen.py" name="gen" outputFile="%0n.in" timeLimit="10"/>
+                <Test rank="1-15">
+                    <In genAll="1" use="gen"/>
+                    <Out use="sol"/>
+                </Test>
+                                <Test rank="16-18">
+                     <In src="%0n.in"/>
+                     <Out use="sol"/>
+                </Test>
+        </Problem>
+</CATS>
+                        
+                        
+                
+
+                        
+        
