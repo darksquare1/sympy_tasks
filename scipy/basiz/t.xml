@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATS version="1.11">
+        <Problem title="Новый базис" lang="ru" tlimit="2" mlimit="64" author="Ю.Сидоренко, Н.Добрынский" inputFile="*STDIN" outputFile="*STDOUT">
+                <ProblemStatement>
+                        <p>Даны четыре вектора, состоящие из трех целочисленных координат: базис - $e1, e2, e3$ и $x$. 
+                                                  Требуется проверить, являются ли данные векторы базисом линейного пространства и найти координаты вектора $x$ в этом базисе.</p>                                          
+                </ProblemStatement>
+                <InputFormat>
+                        <p>На вход подаются четыре строки  координат векторов.
+                                                  Первые три строки – координаты $e1, e2, e3$.
+                                                  Четвёртая строка – координаты $x$.
+                                                </p>
+                </InputFormat>
+                <OutputFormat>
+                        <p>Если векторы не образуют базис, то вывести “not a basis”.
+                                                  Иначе вывести координаты вектора $x$ в базисе $e1$ ,$e2$, $e3$.
+                                                  $x$ гарантированно раскладывается в целых числах.</p>
+                </OutputFormat>
+                <Sample rank="1">
+                        <SampleIn>1 1 1
+1 1 2
+1 2 3
+6 9 14                                         
+                        </SampleIn>
+                        <SampleOut>x = 1e1 + 2e2 + 3e3</SampleOut>
+                </Sample>                                
+                                <Sample rank="2">
+                        <SampleIn>0 1 2
+1 0 1
+-1 2 4
+-2 4 7                                          
+                                                </SampleIn>
+                        <SampleOut>x = 2e1 + -1e2 + 1e3</SampleOut>
+                                </Sample>
+                <Sample rank="3">
+                        <SampleIn>3 1 5
+3 2 8
+0 1 2
+-3 1 2                                         
+                        </SampleIn>
+                        <SampleOut>x = -3e1 + 2e2 + 0e3</SampleOut>
+                </Sample>
+                                <Sample rank="4">
+                        <SampleIn>1 1 1
+-2 -2 -2
+3 3 5
+1 5 2                                         
+                        </SampleIn>
+                        <SampleOut>not a basis</SampleOut>
+                </Sample>
+                <Import type="checker" guid="std.strs"/>
+                <Solution src="sol.py" name="sol"/>
+                <Test rank="1-7">
+                    <In src="%0n.in"/>
+                    <Out use="sol"/>
+                </Test>
+        </Problem>
+</CATS>
+                        
+                        
+                
+
+                        
+        
